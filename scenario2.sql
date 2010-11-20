@@ -22,9 +22,10 @@ WHERE location_id = 0;
 /*AchievementAdd test*/
 /*before the procedure called*/
 SELECT '************************';
-DELETE FROM Achievement WHERE achi_id = 201;
-DELETE FROM ObtainAch WHERE achi_id = 201;
-INSERT INTO Achievement VALUES(201, 'Obtain 5 achievements!');
+DELETE FROM Achievement WHERE achi_id = 203;
+DELETE FROM Achievement WHERE achi_name = 'Obtain 5 achievements!';
+DELETE FROM ObtainAch WHERE achi_id = 203;
+INSERT INTO Achievement VALUES(203, 'Obtain 5 achievements!');
 SELECT user_id, COUNT(*)
 FROM ObtainAch
 GROUP BY user_id

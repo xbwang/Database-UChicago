@@ -49,6 +49,7 @@ SELECT user_id, user_name, location_id FROM User WHERE user_name = 'user test2';
 /*tweet trigger test*/
 SELECT '*************************************';
 DELETE FROM Tweet WHERE content = 'user test2';
+DELETE FROM Tweet WHERE poster_id = 14431558 AND time = 20201119010101;
 DROP FUNCTION IF EXISTS FindMax;
 DELIMITER |
 CREATE FUNCTION FindMax()
