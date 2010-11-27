@@ -8,27 +8,26 @@ $database = $username.'DB';
 // Attempting to connect
 $dbcon = mysql_connect($host, $username, $password)
    or die('Could not connect: ' . mysql_error());
-print 'Connected successfully!<br>';
+//print 'Connected successfully!<br>';
 
 // Selecting database
 mysql_select_db($database, $dbcon) 
    or die('Could not select database');
-print 'Selected database successfully!<br>';
+//print 'Selected database successfully!<br>';
 
 // Listing tables in your database
-$query = 'SHOW TABLES';
-$result = mysql_query($query,$dbcon) 
-  or die('Show tables failed: ' . mysql_error());
+$myusername = $_POST['myusername'];
+$mypassword = $_POST['mypassword'];
+$query = "SELECT * FROM User WHERE user_name = '$myusername' AND password = '$mypassword'";
+$result = mysql_query($query,$dbcon);
+$count = mysql_num_rows($result);
 
-print "The tables in $database database are:<br>";
-
-// Printing table names in HTML
-print '<ul>';
-while ($tuple = mysql_fetch_row($result)) {
-   print "<li>$tuple[0]";
+if($count == 1){
+	header("location:cs53001hw6.html");
 }
-print '</ul>';
-
+else{
+	header("location:login_fail.php");
+}
 // Free result
 mysql_free_result($result);
 

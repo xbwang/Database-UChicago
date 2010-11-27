@@ -2,15 +2,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Untitled Document</title>
+<title>Welcome to TA+!</title>
 <style type="text/css">
 <!--
 body {
-	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	background: #42413C;
 	margin: 0;
 	padding: 0;
 	color: #000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	line-height: 1.4;
+	right: 15px;
 }
 
 /* ~~ Element/tag selectors ~~ */
@@ -70,10 +73,12 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	padding-bottom: 10px;
 }
 .content {
-
-	padding: 10px 0;
 	width: 780px;
 	float: right;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
 }
 
 /* ~~ This grouped selector gives the lists in the .content area space ~~ */
@@ -125,6 +130,8 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	font-size: 1px;
 	line-height: 0px;
 }
+.container .content table tr td {
+}
 -->
 </style></head>
 
@@ -134,23 +141,21 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
   <div class="header"><a href="#"><img src="" alt="Logo" name="Insert_logo" width="180" height="90" id="Insert_logo" style="background: #C6D580; display:block;" /></a> 
     <!-- end .header --></div>
   <div class="sidebar1">
+  <p>Username:</p>
+  <p>Tag: </p>
     <ul class="nav">
       <li><a href="#">Followering</a></li>
       <li><a href="#">Followers</a></li>
       <li><a href="#">My Tweets</a></li>
       <li><a href="#">My Replys</a></li>
     </ul>
-    <p>&nbsp;</p>
   <!-- end .sidebar1 --></div>
   <div class="content">
-    <h1>What's Happening</h1>
+    <h3>What's Happening</h3>
     <p>
       <textarea name="MyTweetTextArea" cols="50" rows="5" id="MyTweetTextArea">text whatever you want</textarea>
     </p>
-    <p>
-    <a href="list_user_tweets.php">List your tables!</a>
-    </p>
-    <!-- end .content --></div>
+  </div>
   <div class="footer">
     <p>CSPP53001 Tweet+ Copyright@2010 Xiangbo Wang, All Right Reserved.</p>
     <!-- end .footer --></div>
