@@ -17,7 +17,7 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
     <div id="logo"> <a href="http://www.88web.org/" class="logo_link"></a> </div>
     <div id="menu">
       <ul>
-        <li><a href="http://cgi-cspp.cs.uchicago.edu/~xbwang/cs53001/main_login.php">Home</a></li>
+        <li><a href="http://cgi-cspp.cs.uchicago.edu/~xbwang/cs53001/login.php">Home</a></li>
         <li><a>Profile</a></li>
         <li></li>
       </ul>

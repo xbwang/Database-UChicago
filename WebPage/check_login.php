@@ -23,7 +23,7 @@ $result = mysql_query($query,$dbcon);
 $count = mysql_num_rows($result);
 
 if($count == 1){
-	header("location:cs53001hw6.html");
+	header("location:main.php");
 }
 else{
 	header("location:login_fail.php");
