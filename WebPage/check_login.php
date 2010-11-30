@@ -18,11 +18,16 @@ mysql_select_db($database, $dbcon)
 // Listing tables in your database
 $myusername = $_POST['myusername'];
 $mypassword = $_POST['mypassword'];
-$query = "SELECT * FROM User WHERE user_name = '$myusername' AND password = '$mypassword'";
+$query = 'SELECT * FROM User WHERE user_name = "'.$myusername.'" AND password = "'.$mypassword.'"';
 $result = mysql_query($query,$dbcon);
 $count = mysql_num_rows($result);
 
 if($count == 1){
+	SESSION_START();
+	$_SESSION['username']=$myusername;
+	//header("location:main.php");
+	//print $_SESSION['username'];
+	//print SESSION_ID();
 	header("location:main.php");
 }
 else{

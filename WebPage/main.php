@@ -1,3 +1,9 @@
+<?php
+	SESSION_START();
+	if(!$_SESSION['username']){
+		header("location:login.php");
+	}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,7 +20,7 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
 </script>
 <div id="main_container" class="clear">
   <div id="left_container">
-    <div id="logo"> <a href="http://www.88web.org/" class="logo_link"></a> </div>
+    <div id="logo"> <a href="http://cgi-cspp.cs.uchicago.edu/~xbwang/cs53001/main.php" class="logo_link"></a> </div>
     <div id="menu">
       <ul>
         <li><a href="http://cgi-cspp.cs.uchicago.edu/~xbwang/cs53001/main.php">Home</a></li>
@@ -28,10 +34,11 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
       </ul>
       <div id="featured-1" class="featured_content">
         <div class="feat_left">
+        <p>&nbsp;</p>
         <h1><font size=4>Tell followers what are you doing</font></h1>
-        <form name="form" method="post" action="check_login.php">
+        <form name="form" method="post" action="post_newtweet.php">
           <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea name="newtweet" id="newtweet" cols="45" rows="5"></textarea></p>
-          <td><input type="submit" name="Submit" value="Submit"></td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><input type="submit" name="Submit" value="Submit"></td>
         </form>
         </div>
         <div class="image_cont"></div>
@@ -46,11 +53,11 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
     </div>
     <div class="side_cont">
       <h2>Action</h2>
-      <h3>Followers</h3>
+      <h3><a href="list_user_tweets.php">Followers</h3>
       <p class="meta_info">who's following me.</p>
       <h3>Following</h3>
       <p class="meta_info">who i'm following.</p>
-      <h3>Tweets</h3>
+      <h3><a href="list_user_tweets.php">Tweets</h3>
       <p class="meta_info">tweets i posted.</p>
       <h3>Comments</h3>
       <p class="meta_info">comments of my tweets</p>

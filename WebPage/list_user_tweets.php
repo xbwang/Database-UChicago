@@ -1,4 +1,5 @@
 <?php
+SESSION_START();
 // Connection parameters 
 $host = 'cspp53001.cs.uchicago.edu';
 $username = 'xbwang';
@@ -16,16 +17,18 @@ mysql_select_db($database, $dbcon)
 print 'Selected database successfully!<br>';
 
 // Listing tables in your database
-$query = 'SHOW TABLES';
+$query = 'SELECT user_name, nick_name, time, content, country, state
+FROM User, Tweet, Location
+WHERE poster_id = user_id AND Tweet.location_id = Location.location_id AND user_name = "'.$_SESSION['username'].'"';
 $result = mysql_query($query,$dbcon) 
-  or die('Show tables failed: ' . mysql_error());
+  or die('Select tweets failed: ' . mysql_error());
 
-print "The tables in $database database are:<br>";
+print "All Your Tweets Are:<br>";
 
 // Printing table names in HTML
 print '<ul>';
 while ($tuple = mysql_fetch_row($result)) {
-   print "<li>$tuple[0]";
+   print "<li>[Username]: $tuple[0], [Nickname]: $tuple[1], [Time]: $tuple[2], [Location]: $tuple[5]/$tuple[4]<br />[Content]: $tuple[3]";
 }
 print '</ul>';
 
