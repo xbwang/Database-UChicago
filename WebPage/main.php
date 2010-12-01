@@ -1,6 +1,6 @@
 <?php
 	SESSION_START();
-	if(!$_SESSION['username']){
+	if(!$_SESSION['userid']){
 		header("location:login.php");
 	}
 ?>
@@ -20,12 +20,12 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
 </script>
 <div id="main_container" class="clear">
   <div id="left_container">
-    <div id="logo"> <a href="http://cgi-cspp.cs.uchicago.edu/~xbwang/cs53001/main.php" class="logo_link"></a> </div>
+    <div id="logo"> <a href="http://cgi-cspp.cs.uchicago.edu/~xbwang/cs53001/login.php" class="logo_link"></a> </div>
     <div id="menu">
       <ul>
-        <li><a href="http://cgi-cspp.cs.uchicago.edu/~xbwang/cs53001/main.php">Home</a></li>
-        <li><a>Profile</a></li>
-        <li></li>
+        <li><a href="list_user_profile.php">Profile</a></li>
+		<li><a href="list_user_tags.php">Tag</a></li>
+        <li><a href="list_user_achievements.php">Achievement</a></li>
       </ul>
     </div>
     <div id="featured">
@@ -37,7 +37,7 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
         <p>&nbsp;</p>
         <h1><font size=4>Tell followers what are you doing</font></h1>
         <form name="form" method="post" action="post_newtweet.php">
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea name="newtweet" id="newtweet" cols="45" rows="5"></textarea></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea name="mynewtweet" id="mynewtweet" cols="45" rows="5"></textarea></p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><input type="submit" name="Submit" value="Submit"></td>
         </form>
         </div>
@@ -53,14 +53,20 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
     </div>
     <div class="side_cont">
       <h2>Action</h2>
-      <h3><a href="list_user_tweets.php">Followers</h3>
-      <p class="meta_info">who's following me.</p>
-      <h3>Following</h3>
-      <p class="meta_info">who i'm following.</p>
-      <h3><a href="list_user_tweets.php">Tweets</h3>
-      <p class="meta_info">tweets i posted.</p>
-      <h3>Comments</h3>
+      <h3><a href="list_user_latest.php">Newest Post</a></h3>
+      <p class="meta_info">lastest tweet i posted</p>
+      <h3><a href="list_user_followers.php">Followers</a></h3>
+      <p class="meta_info">who're following me</p>
+      <h3><a href="list_user_followings.php">Following</a></h3>
+      <p class="meta_info">who i'm following</p>
+      <h3><a href="list_user_tweets.php">Tweets</a></h3>
+      <p class="meta_info">tweets i posted</p>
+      <h3><a href="list_tweet_comments.php">Comments</a></h3>
       <p class="meta_info">comments of my tweets</p>
+      <h3><a href="list_user_replys.php">Replys</a></h3>
+      <p class="meta_info">coments i replied</p>
+      <h3><a href="list_sametag_users.php">Similar Twitter</a></h3>
+      <p class="meta_info">who has the same tag</p>
     </div>
     <div class="side_cont">
       <h2>&nbsp;</h2>

@@ -17,18 +17,18 @@ mysql_select_db($database, $dbcon)
 print 'Selected database successfully!<br>';
 
 // Listing tables in your database
-$query = 'SELECT user_name, nick_name, time, content, country, state
-FROM User, Tweet, Location
-WHERE poster_id = user_id AND Tweet.location_id = Location.location_id AND user_name = "'.$_SESSION['username'].'"';
+$userid = mysql_query($tempQuery, $dbcon);
+$query = 'SELECT user_name, nick_name, country, state, following_group
+FROM User, FollowerList, Location
+WHERE User.location_id = Location.location_id AND user_id = following_id AND follower_id = '.$_SESSION['userid'].'';
 $result = mysql_query($query,$dbcon) 
-  or die('Select tweets failed: ' . mysql_error());
-
-print "All Your Tweets Are:<br>";
+  or die('Select followers failed: ' . mysql_error());
+print "All Twitters You Are Following Are:<br>";
 
 // Printing table names in HTML
 print '<ul>';
 while ($tuple = mysql_fetch_row($result)) {
-   print "<li>[Username]: $tuple[0] [Nickname]: $tuple[1] [Time]: $tuple[2] [Location]: $tuple[5]/$tuple[4]<br />[Content]: $tuple[3]";
+   print "<li>[Username]: $tuple[0] [Nickname]: $tuple[1] [Location]: $tuple[3]/$tuple[2] [Group]: $tuple[4]";
 }
 print '</ul>';
 

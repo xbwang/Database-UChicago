@@ -17,13 +17,15 @@ mysql_select_db($database, $dbcon)
 print 'Selected database successfully!<br>';
 
 // Listing tables in your database
+$username = $_SESSION['username'];
+$userid = $_SESSION['userid'];
 $query = 'SELECT user_name, nick_name, time, content, country, state
 FROM User, Tweet, Location
-WHERE poster_id = user_id AND Tweet.location_id = Location.location_id AND user_name = "'.$_SESSION['username'].'"';
+WHERE poster_id = user_id AND Tweet.location_id = Location.location_id AND user_name = "'.$username.'" AND time >= ALL (SELECT time FROM Tweet WHERE poster_id = '.$userid.')';
 $result = mysql_query($query,$dbcon) 
   or die('Select tweets failed: ' . mysql_error());
 
-print "All Your Tweets Are:<br>";
+print "Your Latest Tweet Is:<br>";
 
 // Printing table names in HTML
 print '<ul>';

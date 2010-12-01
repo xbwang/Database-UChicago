@@ -25,8 +25,11 @@ $count = mysql_num_rows($result);
 if($count == 1){
 	SESSION_START();
 	$_SESSION['username']=$myusername;
+	$tuple = mysql_fetch_row($result);
+	$_SESSION['userid']=$tuple[0];
 	//header("location:main.php");
-	//print $_SESSION['username'];
+	//print $_SESSION['userid'];
+	//print $tuple[0];
 	//print SESSION_ID();
 	header("location:main.php");
 }
