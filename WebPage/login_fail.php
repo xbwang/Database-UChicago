@@ -17,9 +17,9 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
     <div id="logo"> <a href="http://cgi-cspp.cs.uchicago.edu/~xbwang/cs53001/login.php" class="logo_link"></a> </div>
     <div id="menu">
       <ul>
-        <li><a href="http://cgi-cspp.cs.uchicago.edu/~xbwang/cs53001/main_login.php">Home</a></li>
-        <li><a>Profile</a></li>
-        <li></li>
+        <li>Profile</li>
+		<li>Tag</li>
+        <li>Achievement</li>
       </ul>
     </div>
     <div id="featured">
@@ -61,19 +61,21 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
   </div>
   <div id="sidebar">
     <div class="side_cont">
-      <h2>Who Am I</h2>
-      <p></p>
-    </div>
-    <div class="side_cont">
-      <h2>Action</h2>
-      <h3>Followers</h3>
-      <p class="meta_info">who's following me.</p>
-      <h3>Following</h3>
-      <p class="meta_info">who i'm following.</p>
-      <h3>Tweets</h3>
-      <p class="meta_info">tweets i posted.</p>
-      <h3>Comments</h3>
-      <p class="meta_info">comments of my tweets</p>
+	<h2></h2>
+      	 <h3>Newest Post</h3>
+	      <p class="meta_info">lastest tweet i posted</p>
+	      <h3>Followers</h3>
+	      <p class="meta_info">who're following me</p>
+	      <h3>Following</h3>
+	      <p class="meta_info">who i'm following</p>
+	      <h3>Tweets</h3>
+	      <p class="meta_info">tweets i posted</p>
+	      <h3>Comments</h3>
+	      <p class="meta_info">comments of my tweets</p>
+	      <h3>Replys</h3>
+	      <p class="meta_info">coments i replied</p>
+	      <h3>Similar Twitter</h3>
+	      <p class="meta_info">who has the same tag</p>
     </div>
     <div class="side_cont">
       <h2>&nbsp;</h2>

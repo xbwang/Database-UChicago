@@ -23,6 +23,7 @@ caption,th {
 h1,h2,h3,h4,h5,h6 {
 	font-size:100%;
 	font-weight:normal;
+	font-family: Comic Sans MS;
 }
 q:before,q:after {
 	content:'';
@@ -38,7 +39,7 @@ abbr,acronym { border:0;
 /*CSS Style for WaterColored Portfolio*/
 body {
   background: #fff url("images/bck.jpg") repeat-x top; /*gradient background*/
-  font-family: “Lucida Sans Unicode”, sans-serif;
+  font-family: Ã¬Comic Sans MSÃ®, sans-serif;
   font-size: 14px;
   color: #516e75;
 }
@@ -114,7 +115,8 @@ h3 {
   background: url("images/menu_bck.png") no-repeat top left;  
   margin: 35px 0 20px 165px;
   width: 553px;
-  height: 50px;  
+  height: 50px;
+  font-family: Comic Sans MS;  
 }
 
 #menu ul {
@@ -294,6 +296,7 @@ span.ico3 {
 
 .meta_info {
   font-size: 10px;
+  font-family: Comic Sans MS;
   color: #293e43;
   padding: 0 35px 8px 35px;
   background: url("images/post_sep.png") no-repeat bottom center;

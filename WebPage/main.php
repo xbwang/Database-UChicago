@@ -48,11 +48,29 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
   </div>
   <div id="sidebar">
     <div class="side_cont">
-      <h2>Who Am I</h2>
-      <p></p>
-    </div>
-    <div class="side_cont">
-      <h2>Action</h2>
+	<h2>
+	<?php
+	SESSION_START();
+	// Connection parameters 
+	$host = 'cspp53001.cs.uchicago.edu';
+	$username = 'xbwang';
+	$password = 'xbwang';
+	$database = $username.'DB';
+
+	// Attempting to connect
+	$dbcon = mysql_connect($host, $username, $password)
+	   or die('Could not connect: ' . mysql_error());
+	// Selecting database
+	mysql_select_db($database, $dbcon) 
+	   or die('Could not select database');
+	$query = 'SELECT state, country 
+	FROM Location, User
+	WHERE user_id = '.$_SESSION['userid'].' AND User.location_id = Location.location_id';
+	$result = mysql_query($query,$dbcon);
+	$tuple = mysql_fetch_row($result);
+	print $_SESSION['username'].'<br/>'.'@['.$tuple[0].']';
+	?>
+	</h2>
       <h3><a href="list_user_latest.php">Newest Post</a></h3>
       <p class="meta_info">lastest tweet i posted</p>
       <h3><a href="list_user_followers.php">Followers</a></h3>
