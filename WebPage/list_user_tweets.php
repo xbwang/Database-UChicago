@@ -19,7 +19,7 @@ print 'Selected database successfully!<br>';
 // Listing tables in your database
 $query = 'SELECT user_name, nick_name, time, content, country, state
 FROM User, Tweet, Location
-WHERE poster_id = user_id AND Tweet.location_id = Location.location_id AND user_name = "'.$_SESSION['username'].'"';
+WHERE poster_id = user_id AND Tweet.location_id = Location.location_id AND user_name = "'.$_SESSION['username'].'" ORDER BY time DESC';
 $result = mysql_query($query,$dbcon) 
   or die('Select tweets failed: ' . mysql_error());
 
@@ -38,3 +38,4 @@ mysql_free_result($result);
 // Closing connection
 mysql_close($dbcon);
 ?>
+<a href="main.php">Back</a>

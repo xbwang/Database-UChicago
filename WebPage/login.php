@@ -20,8 +20,7 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
 		<li><a href="main.php">Home</a></li>
         <li>Profile</li>
 		<li>Tag</li>
-        <li>Achieve</li>
-		<li>Search</li>
+        <li>Achievement</li>
       </ul>
     </div>
     <div id="featured">

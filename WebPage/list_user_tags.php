@@ -37,3 +37,4 @@ mysql_free_result($result);
 // Closing connection
 mysql_close($dbcon);
 ?>
+<a href="main.php">Back</a>
