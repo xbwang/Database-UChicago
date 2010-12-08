@@ -51,7 +51,21 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
 </tr>
 </td>
 </form>
-<form width = "1000" name="form2" method="post" action="search_tweet.php">
+<form width = "1000" name="form1" method="post" action="search_tweet_contain.php">
+<td><p>&nbsp;</p>
+<tr>
+<td width="65">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tweet</td>
+<td width="0">&nbsp;&nbsp;&nbsp;:</td>
+<td width="500">
+<input name="searchtweet" type="text" id="searchtweet">
+</td>
+</tr>
+<tr>
+<td><input type="submit" name="Submit" value="Search"></td>
+</tr>
+</td>
+</form>
+<form width = "1000" name="form2" method="post" action="search_tweet_between.php">
 <td><p>&nbsp;</p>
 <tr>
 <td width="65">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From</td>

@@ -1,4 +1,5 @@
 <?php
+SESSION_START();
 // Connection parameters 
 $host = 'cspp53001.cs.uchicago.edu';
 $username = 'xbwang';
@@ -16,35 +17,18 @@ mysql_select_db($database, $dbcon)
 //print 'Selected database successfully!<br>';
 
 // Listing tables in your database
-$myusername = $_POST['myusername'];
+$myusername = $_SESSION['username'];
 $mypassword = $_POST['mypassword'];
 $mynickname = $_POST['mynickname'];
 $mybioinfo = $_POST['mybioinfo'];
 $mybloglink = $_POST['mybloglink'];
 $mylocation = $_POST['mylocation'];
-/*
-print $myusername;
-print $mypassword;
-print $mynickname;
-print $mybioinfo;
-print $mybloglink;
-print $mylocation;
-*/
-$query = 'SELECT * From User WHERE user_name = "'.$myusername.'"';
+
+$query = 'UPDATE User SET nick_name = "'.$mynickname.'", password = "'.$mypassword.'", bio_info = "'.$mybioinfo.'", location_id = '.$mylocation.', blog_link = "'.$mybloglink.'"
+WHERE user_name = "'.$myusername.'"';
 $result = mysql_query($query,$dbcon);
-$count = mysql_num_rows($result);
-if($count != 0){
-	header("location:register_fail.php");
-}
-else{
-	$query = 'SELECT MAX(user_id) FROM User';
-	$result = mysql_query($query, $dbcon);
-	$tuple = mysql_fetch_row($result);
-	$userid = $tuple[0]+1;
-	$query = 'INSERT INTO User(user_id, user_name, nick_name, bio_info, location_id, blog_link, password) VALUES('.$userid.', "'.$myusername.'", "'.$mynickname.'", "'.$mybioinfo.'", '.$mylocation.', "'.$mybloglink.'", "'.$mypassword.'")';
-	$result = mysql_query($query,$dbcon);
-	header("location:main.php");
-}
+header("location:main.php");
+
 
 
 // Free result
