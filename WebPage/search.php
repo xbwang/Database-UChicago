@@ -36,15 +36,42 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
       </ul>
       <div id="featured-1" class="featured_content">
         <div class="feat_left">
-        <p>&nbsp;</p>
-        <h1><font size=4>Tell followers what are you doing</font></h1>
-        <form name="form" method="post" action="post_newtweet.php">
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea name="mynewtweet" id="mynewtweet" cols="45" rows="5"></textarea></p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><input type="submit" name="Submit" value="Submit"></td>
-        </form>
-		<h1><font size=4>
-		<a href="list_following_tweets.php">Show Following Tweets</a>
-		</font></h1>
+        <form width = "1000" name="form1" method="post" action="search_tweeter.php">
+<td><p>&nbsp;</p>
+  <h1><font size=5><strong>Search</font></big></h1>
+<tr>
+<td width="65">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tweeter</td>
+<td width="0">:</td>
+<td width="500">
+  <input name="searchtweeter" type="text" id="searchtweeter">
+</td>
+</tr>
+<tr>
+<td><input type="submit" name="Submit" value="Search"></td>
+</tr>
+</td>
+</form>
+<form width = "1000" name="form2" method="post" action="search_tweet.php">
+<td><p>&nbsp;</p>
+<tr>
+<td width="65">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From</td>
+<td width="0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+<td width="500">
+  <input name="from" type="text" id="from">
+</td>
+</tr>
+<tr>
+<td width="65">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To</td>
+<td width="0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+<td width="500">
+  <input name="to" type="text" id="to">
+</td>
+</tr>
+<tr>
+<td><input type="submit" name="Submit" value="Search"></td>
+</tr>
+</td>
+</form>
         </div>
         <div class="image_cont"></div>
       </div>

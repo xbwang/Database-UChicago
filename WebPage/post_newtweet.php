@@ -22,9 +22,13 @@ $query = 'SELECT MAX(tweet_id) FROM Tweet';
 $result = mysql_query($query,$dbcon);
 $tuple = mysql_fetch_row($result);
 $tweetid = $tuple[0]+1;
+$query = 'SELECT location_id FROM User';
+$result = mysql_query($query,$dbcon);
+$tuple = mysql_fetch_row($result);
+$locationid = $tuple[0];
 $userid = $_SESSION['userid'];
 $time = date("YmdHis", time());
-$query = 'INSERT INTO Tweet(tweet_id, poster_id, time, content, location_id) VALUES('.$tweetid.', '.$userid.', '.$time.', "'.$mynewtweet.'", 16)';
+$query = 'INSERT INTO Tweet(tweet_id, poster_id, time, content, location_id) VALUES('.$tweetid.', '.$userid.', '.$time.', "'.$mynewtweet.'", '.$locationid.')';
 $result = mysql_query($query,$dbcon);
 header("location:main.php");
 

@@ -14,12 +14,14 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
 </script>
 <div id="main_container" class="clear">
   <div id="left_container">
-    <div id="logo"> <a href="http://cgi-cspp.cs.uchicago.edu/~xbwang/cs53001/login.php" class="logo_link"></a> </div>
+    <div id="logo"> <a href="http://cgi-cspp.cs.uchicago.edu/~xbwang/cs53001/register.php" class="logo_link"></a> </div>
     <div id="menu">
       <ul>
+		<li><a href="main.php">Home</a></li>
         <li>Profile</li>
 		<li>Tag</li>
-        <li>Achievement</li>
+        <li>Achieve</li>
+		<li>Search</li>
       </ul>
     </div>
     <div id="featured">
@@ -84,7 +86,7 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
   <div class="side_bottom"> </div>
   <div class="clear_sep"></div>
   <div id="footer">
-    <p>Copyright &copy;<strong>2100, Xiangbo Wang</strong>- All Rights Reserved<br />
+    <p>Copyright &copy;<strong>2010, Xiangbo Wang</strong>- All Rights Reserved<br />
       Template by: <a href="http://www.pvmgarage.com">PV.M Garage</a></p>
   </div>
 </div>
