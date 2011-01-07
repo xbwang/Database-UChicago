@@ -17,7 +17,7 @@ mysql_select_db($database, $dbcon)
 print 'Selected database successfully!<br>';
 
 // Listing tables in your database
-$query = 'SELECT user_name, nick_name, achi_name
+$query = 'SELECT user_name, nick_name, achi_name, Achievement.achi_id
 FROM Achievement, ObtainAch, User
 WHERE  Achievement.achi_id = ObtainAch.achi_id AND User.user_id = ObtainAch.user_id AND User.user_id = "'.$_SESSION['userid'].'"';
 $result = mysql_query($query,$dbcon) 
@@ -27,7 +27,7 @@ print "All Your Achievements Are:<br>";
 // Printing table names in HTML
 print '<ul>';
 while ($tuple = mysql_fetch_row($result)) {
-   print "<li>[Username]: $tuple[0] [Nickname]: $tuple[1] [Achievement]: $tuple[2]";
+   print "<li>[Username]: $tuple[0] [Nickname]: $tuple[1] [Achievement]: <a href = \"list_same_achieve.php?achiid=".$tuple[3]."\">$tuple[2]</a>";
 }
 print '</ul>';
 

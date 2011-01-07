@@ -159,8 +159,8 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
   <div id="sidebar">
     <div class="side_cont">
 		<h2></h2>
-      	  <h3>Newest Post</h3>
-	      <p class="meta_info">lastest tweet i posted</p>
+      	  <h3>All Tweets</h3>
+	      <p class="meta_info">all users' tweets</p>
 	      <h3>Followers</h3>
 	      <p class="meta_info">who're following me</p>
 	      <h3>Following</h3>

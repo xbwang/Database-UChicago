@@ -28,7 +28,7 @@ print "All Twitters You Are Following Are:<br>";
 // Printing table names in HTML
 print '<ul>';
 while ($tuple = mysql_fetch_row($result)) {
-   print "<li>[Username]: $tuple[0] [Nickname]: $tuple[1] [Location]: $tuple[3]/$tuple[2] [Group]: $tuple[4]";
+   print "<li>[Username]: <a href = \"list_user_all.php?username=".$tuple[0]."\">$tuple[0]</a> [Nickname]: $tuple[1] [Location]: $tuple[3]/$tuple[2] [Group]: $tuple[4]";
 }
 print '</ul>';
 

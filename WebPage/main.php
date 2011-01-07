@@ -77,8 +77,8 @@ $("#featured").tabs({ fx: { height: 'toggle', opacity: 'toggle' } }); });
 	?>
 	<a href="logout.php">Logout</a>
 	</h2>
-      <h3><a href="list_user_latest.php">Newest Post</a></h3>
-      <p class="meta_info">lastest tweet i posted</p>
+      <h3><a href="list_all_tweets.php">All Tweets</a></h3>
+      <p class="meta_info">all users' tweets</p>
       <h3><a href="list_user_followers.php">Followers</a></h3>
       <p class="meta_info">who're following me</p>
       <h3><a href="list_user_followings.php">Following</a></h3>

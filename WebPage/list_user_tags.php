@@ -27,7 +27,7 @@ print "All Your Tags Are:<br>";
 // Printing table names in HTML
 print '<ul>';
 while ($tuple = mysql_fetch_row($result)) {
-   print "<li>[Username]: $tuple[0] [Nickname]: $tuple[1] [Tag]: $tuple[2]";
+   print "<li>[Username]: $tuple[0] [Nickname]: $tuple[1] [Tag]: <a href = \"list_same_tag.php?tagname=".$tuple[2]."\">$tuple[2]</a>";
 }
 print '</ul>';
 
@@ -37,4 +37,18 @@ mysql_free_result($result);
 // Closing connection
 mysql_close($dbcon);
 ?>
+<form width = "1000" name="form1" method="post" action="add_tag.php">
+<td><p>&nbsp;</p>
+<tr>
+<td width="65">Add Tag</td>
+<td width="0">:</td>
+<td width="500">
+<input name="addtag" type="text" id="addtag">
+</td>
+</tr>
+<tr>
+<td><input type="submit" name="Add" value="Add"></td>
+</tr>
+</td>
+</form>
 <a href="main.php">Back</a>

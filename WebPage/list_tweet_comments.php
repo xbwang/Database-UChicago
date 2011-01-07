@@ -28,7 +28,7 @@ print "All Comments of Your Tweets Are:<br>";
 // Printing table names in HTML
 print '<ul>';
 while ($tuple = mysql_fetch_row($result)) {
-   print "<li>[Tweet]: \"$tuple[2]\"<br />[Username]: $tuple[0] [Nickname]: $tuple[1] [Time]: $tuple[3] [Location]: $tuple[6]/$tuple[5]<br />[Comment]: \"$tuple[4]\"";
+   print "<li>[Tweet]: \"$tuple[2]\"<br />[Username]: <a href = \"list_user_all.php?username=".$tuple[0]."\">$tuple[0]</a> [Nickname]: $tuple[1] [Time]: $tuple[3] [Location]: $tuple[6]/$tuple[5]<br />[Comment]: \"$tuple[4]\"";
 }
 print '</ul>';
 

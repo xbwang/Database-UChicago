@@ -1,5 +1,4 @@
 <?php
-SESSION_START();
 // Connection parameters 
 $host = 'cspp53001.cs.uchicago.edu';
 $username = 'xbwang';
@@ -17,18 +16,19 @@ mysql_select_db($database, $dbcon)
 print 'Selected database successfully!<br>';
 
 // Listing tables in your database
-$query = 'SELECT user_name, nick_name, Tweet.content, Comment.time, Comment.content, country, state
-FROM User, Tweet, Comment, Location
-WHERE Tweet.tweet_id = Comment.tweet_id AND user_id = poster_id AND Location.location_id = User.location_id AND replyer_id = '.$_SESSION['userid'].' ORDER BY Comment.time DESC';
+$query = 'SELECT user_name, nick_name, time, content, country, state
+FROM User, Tweet, Location
+WHERE poster_id = user_id AND Tweet.location_id = Location.location_id ORDER BY time DESC';
 $result = mysql_query($query,$dbcon) 
   or die('Select tweets failed: ' . mysql_error());
 
-print "All Comments I Replied:<br>";
+print "All Users' Tweets Are:<br>";
 
 // Printing table names in HTML
 print '<ul>';
 while ($tuple = mysql_fetch_row($result)) {
-   print "<li>[Tweet]: \"$tuple[2]\"<br />[Username]: <a href = \"list_user_all.php?username=".$tuple[0]."\">$tuple[0]</a> [Nickname]: $tuple[1] [Time]: $tuple[3] [Location]: $tuple[6]/$tuple[5]<br />[My Comment]: \"$tuple[4]\"";
+   echo "<li>[Username]: <a href = \"list_user_all.php?username=".$tuple[0]."\">$tuple[0]</a> [Nickname]: $tuple[1] [Time]: $tuple[2] [Location]: $tuple[5]/$tuple[4]<br />[Content]: $tuple[3]";
+ /*echo "<li>[Username]: $tuple[0] [Nickname]: $tuple[1] [Time]: $tuple[2] [Location]: $tuple[5]/$tuple[4]<br />[Content]: $tuple[3]";*/
 }
 print '</ul>';
 

@@ -29,7 +29,7 @@ while($tuple = mysql_fetch_row($result)){
 	$resultT = mysql_query($queryT,$dbcon);
 	print '<ul>';
 	while ($tupleT = mysql_fetch_row($resultT)) {
-	   print "<li>[Username]: $tupleT[0] [Nickname]: $tupleT[1] [Time]: $tupleT[2] [Location]: $tupleT[5]/$tupleT[4]<br />[Content]: $tupleT[3]";
+	   print "<li>[Username]: <a href = \"list_user_all.php?username=".$tupleT[0]."\">$tupleT[0]</a> [Nickname]: $tupleT[1] [Time]: $tupleT[2] [Location]: $tupleT[5]/$tupleT[4]<br />[Content]: $tupleT[3]";
 	}
 	print '</ul>';
 }

@@ -17,18 +17,23 @@ mysql_select_db($database, $dbcon)
 print 'Selected database successfully!<br>';
 
 // Listing tables in your database
-$query = 'SELECT user_name, nick_name, Tweet.content, Comment.time, Comment.content, country, state
-FROM User, Tweet, Comment, Location
-WHERE Tweet.tweet_id = Comment.tweet_id AND user_id = poster_id AND Location.location_id = User.location_id AND replyer_id = '.$_SESSION['userid'].' ORDER BY Comment.time DESC';
+$achi_id = $_GET['achiid'];
+$query = 'SELECT achi_name FROM Achievement WHERE achi_id = '.$achi_id.'';
+$result = mysql_query($query, $dbcon);
+$tuple = mysql_fetch_row($result);
+$achi_name = $tuple[0];
+
+$query = 'SELECT DISTINCT user_name, nick_name, state FROM User, ObtainAch, Achievement, Location WHERE Achievement.achi_id = ObtainAch.achi_id AND ObtainAch.achi_id = "'.$achi_id.'" AND Location.location_id = User.location_id';
 $result = mysql_query($query,$dbcon) 
   or die('Select tweets failed: ' . mysql_error());
-
-print "All Comments I Replied:<br>";
+print "All Users Who Achieve \"";
+print $achi_name;
+print "\" Are:<br>";
 
 // Printing table names in HTML
 print '<ul>';
 while ($tuple = mysql_fetch_row($result)) {
-   print "<li>[Tweet]: \"$tuple[2]\"<br />[Username]: <a href = \"list_user_all.php?username=".$tuple[0]."\">$tuple[0]</a> [Nickname]: $tuple[1] [Time]: $tuple[3] [Location]: $tuple[6]/$tuple[5]<br />[My Comment]: \"$tuple[4]\"";
+   print "<li>[Username]: <a href = \"list_user_all.php?username=".$tuple[0]."\">$tuple[0]</a> [Nickname]: $tuple[1] [Location]: $tuple[2]";
 }
 print '</ul>';
 
